@@ -6,9 +6,7 @@ Documentation in the rows of the code. ✍️
 
 Here is a preview GIF, where you can see, how it works ⚙️
 
-![d](asd)
-
-
+<img title="" src="https://github.com/vellt/TabBarView-Notifies-The-View-Without-Delay/blob/main/1675099977893.gif?raw=true" alt="https://github.com/vellt/TabBarView-Notifies-The-View-Without-Delay/blob/main/1675099977893.gif?raw=true" width="328">
 
 I encountered an interesting problem during a project, with many open issues on the Web, 
 
