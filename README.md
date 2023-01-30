@@ -2,9 +2,7 @@
 
 I demonstrate the ability of TabBarView to notify the view with the correct index without delay. ✅ 
 
-Documentation in the rows of the code. ✍️
-
-Here is a preview GIF, where you can see, how it works ⚙️
+Documentation in the rows of the code. ✍️ Here is a preview GIF, where you can see, how it works:
 
 <img title="" src="https://github.com/vellt/TabBarView-Notifies-The-View-Without-Delay/blob/main/1675099977893.gif?raw=true" alt="https://github.com/vellt/TabBarView-Notifies-The-View-Without-Delay/blob/main/1675099977893.gif?raw=true" width="328">
 
