@@ -6,6 +6,8 @@ I encountered an interesting problem during a project, with many open issues on 
  
 - [TabController listener triggers with delay on swipe #89371](https://github.com/flutter/flutter/issues/89371)
 
+- [Describe how to listen for page updates in TabBar and TabBarView when using DefaultTabController #53155](https://github.com/flutter/flutter/issues/53155)
+
 I demonstrate the ability of TabBarView to notify the view with the correct index without delay. ✅ <br>
 Documentation in the [the rows of the code](https://github.com/vellt/TabBarView-Notifies-The-View-Without-Delay/blob/main/lib/main.dart). ✍️ Here is a **preview GIF**, where you can see, how it works:
 
