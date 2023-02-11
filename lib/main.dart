@@ -24,12 +24,14 @@ class IndexController extends GetxController {
 
   /// to the change and update of the index value
   change({required int newValue}) {
-    index = newValue;
-    update();
+    if (index != newValue) {
+      index = newValue;
+      update();
+    }
   }
 }
 
-/// It's the main view, where I demonstrate the ability of TabView to notify the view with the correct index without delay
+/// It's the main view, where I demonstrate the ability of TabBarView to notify the view with the correct index without delay
 class TabUI extends StatelessWidget {
   // I made an object from the IndexController, so now I can get everything from it
   IndexController indexController = Get.put(IndexController());
@@ -40,17 +42,21 @@ class TabUI extends StatelessWidget {
       // I defined below 3 tabs and 3 TabBarView's children, so you have to add value 3 to the length
       length: 3,
       child: Builder(builder: (context) {
-        // I made an object from DefaultTabController of the Context, which I can achieve the animation event
+        // I made an object from DefaultTabController of the Context, through it I can achieve the animation event
         var _ = DefaultTabController.of(context);
-        // When You are scrolling on the TabBarView, this animation event will be triggered
         _?.animation!.addListener(() {
-          // I rounded the current value of the Index, it's a very important step
-          int temp = _.animation!.value.round();
-          if (indexController.index != temp) {
-            // Here I will change the current value to another, which will update the view
-            indexController.change(newValue: temp);
-          }
+          // this controller is handling the changes, and this is that will update the view
+          indexController.change(
+            newValue:
+                // I checked that the index is changing,
+                (_.indexIsChanging)
+                    // if it's true, that means you tapped a Tab element, so I give the current index to the controller
+                    ? _.index
+                    // or if this false, that means you swiped among the TabBarView, so I give the rounded animation value to the controller
+                    : _.animation!.value.round(),
+          );
         });
+
         return Scaffold(
           appBar: AppBar(
             title: const Text("The refreshed index is:"),
@@ -72,22 +78,15 @@ class TabUI extends StatelessWidget {
             ],
           ),
           body: Column(
-            children: [
+            children: const [
               TabBar(
-                onTap: (value) {
-                  // When You tap a Tab's element, this onTap event will be triggered
-                  if (indexController.index != value) {
-                    // Here I will change the current value to another, which will update the view
-                    indexController.change(newValue: value);
-                  }
-                },
-                tabs: const [
+                tabs: [
                   Tab(child: Text("0", style: TextStyle(fontSize: 20))),
                   Tab(child: Text("1", style: TextStyle(fontSize: 20))),
                   Tab(child: Text("2", style: TextStyle(fontSize: 20))),
                 ],
               ),
-              const Expanded(
+              Expanded(
                 child: TabBarView(
                   children: [
                     Center(child: Text("0", style: TextStyle(fontSize: 50))),
