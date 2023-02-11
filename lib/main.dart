@@ -45,7 +45,7 @@ class TabUI extends StatelessWidget {
         // I made an object from DefaultTabController of the Context, through it I can achieve the animation event
         var _ = DefaultTabController.of(context);
         _?.animation!.addListener(() {
-          // this controller is handling the changes, and this is that will update the view
+          // this controller is handling the changes, and this is that what will update the view
           indexController.change(
             newValue:
                 // I checked that the index is changing,
