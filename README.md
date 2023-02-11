@@ -1,6 +1,6 @@
 # TabBarView notifies the View without delay⏱️
 
-I encountered an interesting problem during a project, with many open issues on the Web, such as: 
+I encountered an interesting problem throgh a project, with many open issues on the Web, such as: 
 
 - [TabController notifies correct index with a delay (after the tab scroll animation ends) #88875](https://github.com/flutter/flutter/issues/88875)
  
