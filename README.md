@@ -13,10 +13,11 @@ Documentation in the [the rows of the code](https://github.com/vellt/TabBarView-
 The soul of the project: 
 
 ```dart
+// indexController.change() comes from IndexController, which is declared in main.dart.
 
 var _ = DefaultTabController.of(context);
 _?.animation!.addListener(() {
-  indexController.change(newValue:(_.indexIsChanging)? _.index: _.animation!.value.round());
+  indexController.change(newValue:(_.indexIsChanging)?_.index:_.animation!.value.round());
 });
 
 ```
